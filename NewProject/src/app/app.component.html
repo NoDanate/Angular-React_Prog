@@ -12,13 +12,14 @@
 </style>
 
 <main class="main">
-  <h1>{{title}}</h1>
 
-  <p>{{'Heelo & Welcome to' + 'Angular Party'}} </p>
-  <p>{{100 * 80}}</p>
 
-  <h1>{{title}}</h1>
+  <app-pipes-test></app-pipes-test>
+
+  <h1>{{title | lowercase}}</h1>
   <app-to-do-items></app-to-do-items>
+
+
 
 </main>
 
