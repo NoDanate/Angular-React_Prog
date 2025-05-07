@@ -1,10 +1,33 @@
+<div *ngIf="selectedItem">
+  <h2>"{{selectedItem?.name}}" details</h2>
+  <div><span>id: </span>{{selectedItem.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedItem.name" placeholder="name">
+    </label>
+  </div>
+
+  <div>
+    <label>is Complete:
+      <input type="checkbox" [(ngModel)]="selectedItem.isComplete">
+    </label>
+  </div>
+
+
+</div>
 
 <h2>MyList</h2>
 <ul class="items">
-  <li *ngFor="let item of items" (click)="OnSelected(item)" [class.selected]="item === selectedItem">
+  <li *ngFor="let item of items"
+      (click)="OnSelected(item)" [class.selected]="item === selectedItem"
+      (dblclick)="OnDoubleClick(item)" [class.completed]="item.isComplete"
+  >
     {{item.id}} : {{item.name}}
+    <button (click)="RemoveItem(item)" class="remove-button">Remove</button>
   </li>
 </ul>
+
+<button (click)="AddItem()" class="add-button">Add Item</button>
 
 
 

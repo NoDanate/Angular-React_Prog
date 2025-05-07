@@ -22,3 +22,7 @@
 .items li.selected:hover{
   background-color: rgb(89, 124, 79);
 }
+
+.items li.completed{
+  background-color: #00ff0c;
+}
