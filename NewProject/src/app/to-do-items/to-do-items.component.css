@@ -1,0 +1,24 @@
+.items{
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.items li{
+  background-color: #eee;
+  cursor: pointer;
+  margin: .5em 0;
+  padding: .3em;
+  height: 1.6em;
+  border-radius: 4px;
+  align-content: center;
+}
+
+.items li.selected{
+  background-color: rgb(140, 180, 130);
+  color: white;
+}
+
+.items li.selected:hover{
+  background-color: rgb(89, 124, 79);
+}

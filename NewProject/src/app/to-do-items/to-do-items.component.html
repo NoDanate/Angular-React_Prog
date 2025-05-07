@@ -1,4 +1,23 @@
-<h2>{{toDoItem.name}} Details</h2>
-<div><span> id: </span>{{toDoItem.id}}</div>
-<div><span> name: </span>{{toDoItem.name}}</div>
-<div><span>is complete: </span>{{toDoItem.isComplete}}</div>
+
+<h2>MyList</h2>
+<ul class="items">
+  <li *ngFor="let item of items" (click)="OnSelected(item)" [class.selected]="item === selectedItem">
+    {{item.id}} : {{item.name}}
+  </li>
+</ul>
+
+
+
+
+<!--
+<div *ngIf="items.length>0">
+  {{items.length}} {{items.length == 1 ? 'item' : 'items}}
+</div>
+
+<div [ngSwitch]="car">
+  <p *ngSwitchCase="'Audi'">Это Ауди</p>
+  <p *ngSwitchCase="'BMW'">Это БМВ></p>
+  <p *ngSwitchDefault>Это неизвестная машина</p>
+</div>
+
+-->
