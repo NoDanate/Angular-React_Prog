@@ -1,5 +1,10 @@
 export class ToDoItem{
-  id!: number;
+  id!: string;
    name!: string;
-   isComplete!: boolean;
+   status!: TaskStatus;
+}
+
+export enum TaskStatus{
+  Active = 'active',
+  Done = 'done'
 }

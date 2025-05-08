@@ -30,13 +30,27 @@
   color: #fff;
 }
 
+
+.selected-item{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 15px
+}
+
+.selected-item h2{
+  align-self: center;
+}
+
 .remove-button {
-  margin-left: 15px;
-  background: transparent;
-  border: none;
   cursor: pointer;
   color: #ff5252;
   font-size: 14px;
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .add-button {

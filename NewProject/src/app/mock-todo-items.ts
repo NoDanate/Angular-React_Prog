@@ -1,14 +1,15 @@
-import { ToDoItem} from './to-do-item';
+import {TaskStatus, ToDoItem} from './to-do-item';
+import { v4 as uuidv4 } from 'uuid'
 
 export const ITEMS: ToDoItem[] = [
-  { id: 1, name: 'Do homework', isComplete: false},
-  { id: 2, name: 'Do chores', isComplete: false},
-  { id: 3, name: 'Cook something', isComplete: false},
-  { id: 4, name: 'Do pullups', isComplete: false},
-  { id: 5, name: 'Visit grandma', isComplete: false},
-  { id: 6, name: 'Clean your desk', isComplete: false},
-  { id: 7, name: 'Wash dishes', isComplete: false},
-  { id: 8, name: 'Visit parents', isComplete: false},
-  { id: 9, name: 'Clean your shoes', isComplete: false},
-  { id: 10, name: 'Take a bath', isComplete: false},
+  { id: uuidv4(), name: 'Do homework', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Do chores', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Cook something', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Do pullups', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Visit grandma', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Clean your desk', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Wash dishes', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Visit parents', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Clean your shoes', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Take a bath', status: TaskStatus.Active},
 ];

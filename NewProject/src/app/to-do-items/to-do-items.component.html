@@ -1,30 +1,39 @@
 <div class="main-body">
-<div *ngIf="selectedItem">
+<div *ngIf="selectedItem" class="selected-item">
   <h2>"{{selectedItem?.name}}" details</h2>
-  <div><span>id: </span>{{selectedItem.id}}</div>
   <div>
-    <label>name:
+    <label class="name-label">name:
       <input [(ngModel)]="selectedItem.name" placeholder="name">
     </label>
   </div>
 
   <div>
-    <label>is Complete:
-      <input type="checkbox" [(ngModel)]="selectedItem.isComplete">
+    <label class="status-label">status:
+      <select [(ngModel)]="selectedItem.status">
+        <option [value]="TaskStatus.Active">Active</option>
+        <option [value]="TaskStatus.Done">Done</option>
+      </select>
     </label>
   </div>
 
-
+  <button (click)="RemoveSelectedItem()" class="remove-button">Remove</button>
 </div>
 
-<h2>MyList</h2>
+<h2>My ToDo List</h2>
+
+  <div class="filter">
+    <button (click)="SetFilter('all')"  [class.active]="filter === 'all'">All</button>
+    <button (click)="SetFilter(TaskStatus.Active)" [class.active]="filter ==='active'">Active</button>
+    <button (click)="SetFilter(TaskStatus.Done)" [class.active]="filter === 'done'">Done</button>
+  </div>
+
 <ul class="items">
-  <li *ngFor="let item of items"
+  <li *ngFor="let item of FilterItems()"
       (click)="OnSelected(item)" [class.selected]="item === selectedItem"
-      (dblclick)="OnDoubleClick(item)" [class.completed]="item.isComplete"
+      (dblclick)="OnDoubleClick(item)" [class.completed]="item.status === TaskStatus.Done"
   >
     <!--{{item.id}} :--> {{item.name}}
-    <button (click)="RemoveItem(item)" class="remove-button">Remove</button>
+
   </li>
 </ul>
 
