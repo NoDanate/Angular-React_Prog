@@ -1,4 +1,41 @@
+.filter{
+  display: flex;
+  flex-direction: row;
+  gap: 10px
+}
 
+.filter button{
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #84c556;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.filter button.active-filter{
+  background-color: #ac6666;
+}
+
+
+.edit-button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.edit-button:hover{
+  background-color: mediumseagreen;
+  transition: background-color 0.2s;
+}
+
+.remove-button:disabled{
+  opacity: 50%;
+}
 
 .items {
   list-style-type: none;
@@ -17,6 +54,7 @@
   flex-direction: row;
   justify-content: space-between;
   border: 1px solid lightgray;
+
 
 }
 
@@ -43,14 +81,15 @@
 }
 
 .remove-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  color: #ff5252;
-  font-size: 14px;
-  background-color: whitesmoke;
-  border: 1px solid lightgray;
-  margin: 0 auto;
-  padding: 5px;
-  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .add-button {
@@ -81,4 +120,10 @@
   flex-direction: column;
   align-items: center ;
   padding-bottom: 20px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }

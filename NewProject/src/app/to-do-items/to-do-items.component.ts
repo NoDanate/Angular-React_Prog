@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {TaskStatus, ToDoItem} from '../to-do-item';
 import {ITEMS} from '../mock-todo-items';
 import {NgForOf, NgIf} from '@angular/common';
@@ -20,6 +20,7 @@ export class ToDoItemsComponent implements OnInit {
   items = ITEMS;
   selectedItem: ToDoItem | undefined;
   filter: TaskStatus | 'all' = 'all';
+  editingItem: ToDoItem | undefined;
 
   constructor() {}
   ngOnInit(): void {
@@ -39,8 +40,10 @@ export class ToDoItemsComponent implements OnInit {
 
 
 
-  OnSelected(item: ToDoItem) {
-    this.selectedItem = item
+  OnSelected(item: ToDoItem, event: MouseEvent) {
+    this.selectedItem = item;
+    event.stopPropagation();
+
   }
 
   OnDoubleClick(item: ToDoItem){
@@ -60,11 +63,11 @@ export class ToDoItemsComponent implements OnInit {
   }
 
   RemoveSelectedItem(){
-  if(this.selectedItem){
-    this.items = this.items.filter(i => i.id !== this.selectedItem?.id);
-    this.selectedItem = undefined;
-    this.SaveItems();
-  }
+    if(this.selectedItem){
+      this.items = this.items.filter(i => i.id !== this.selectedItem?.id);
+      this.selectedItem = undefined;
+      this.SaveItems();
+    }
   }
 
 
@@ -76,6 +79,24 @@ export class ToDoItemsComponent implements OnInit {
     this.filter = filter
   }
 
+  StartEdit(item: ToDoItem){
+    this.editingItem = item;
+  }
+
+  StopEdit(){
+    this.editingItem = undefined;
+    this.SaveItems();
+  }
+
+  @HostListener('document:click', ['$event'])
+  DeselectClick(event: MouseEvent){
+    const target = event.target as HTMLElement;
+    if(!target.closest(".items") && this.selectedItem){
+      this.selectedItem = undefined;
+    }
+  }
+
   protected readonly TaskStatus = TaskStatus;
+  protected readonly event = event;
 }
 
