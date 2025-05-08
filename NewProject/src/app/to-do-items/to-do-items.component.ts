@@ -28,7 +28,7 @@ export class ToDoItemsComponent implements OnInit {
 
   AddItem(){
     const newItem: ToDoItem = {
-      id: this.items.length + 1,
+      id: this.items.length ? Math.max(...this.items.map(i => i.id)) + 1 : 1,
       name: "New Task",
       isComplete: false
     };

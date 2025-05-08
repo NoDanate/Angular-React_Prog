@@ -22,7 +22,7 @@
       (click)="OnSelected(item)" [class.selected]="item === selectedItem"
       (dblclick)="OnDoubleClick(item)" [class.completed]="item.isComplete"
   >
-    {{item.id}} : {{item.name}}
+    <!--{{item.id}} :--> {{item.name}}
     <button (click)="RemoveItem(item)" class="remove-button">Remove</button>
   </li>
 </ul>
