@@ -11,5 +11,5 @@ export const ITEMS: ToDoItem[] = [
   { id: uuidv4(), name: 'Wash dishes', status: TaskStatus.Active},
   { id: uuidv4(), name: 'Visit parents', status: TaskStatus.Active},
   { id: uuidv4(), name: 'Clean your shoes', status: TaskStatus.Active},
-  { id: uuidv4(), name: 'Take a bath', status: TaskStatus.Active},
+  { id: uuidv4(), name: 'Take ы bath', status: TaskStatus.Active},
 ];
