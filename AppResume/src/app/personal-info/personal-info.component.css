@@ -1,0 +1,30 @@
+.card{
+  max-width: 300px;
+  border: 1px solid #dddddd;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+h2{
+  font-size: 24px;
+  margin: 10px 5px;
+}
+
+p{
+  margin: 5px;
+  text-align: end;
+}
+
+.profile-photo{
+  border-radius: 5px;
+  width: 250px;
+  height: 250px;
+  align-self: center;
+  margin: 10px;
+
+}
