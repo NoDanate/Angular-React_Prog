@@ -1,0 +1,8 @@
+<div class="experience-card">
+  <h2>Опыт работы</h2>
+  <div *ngFor="let job of experience" class="job">
+    <h3>{{job.position}} - {{job.company}}</h3>
+    <p>{{job.period}}</p>
+    <p>{{job.description}}</p>
+  </div>
+</div>
