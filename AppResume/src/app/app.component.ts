@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component} from '@angular/core';
 import {PersonalInfoComponent} from './personal-info/personal-info.component';
 import {ExperienceComponent} from './experience/experience.component';
 import {KnowledgeComponent} from './knowledge/knowledge.component';
@@ -7,7 +6,7 @@ import {LinksComponent} from './links/links.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, PersonalInfoComponent, ExperienceComponent, KnowledgeComponent, LinksComponent],
+  imports: [PersonalInfoComponent, ExperienceComponent, KnowledgeComponent, LinksComponent],
   //templateUrl: './app.component.html',
   template: `
     <div class="container">
@@ -58,7 +57,7 @@ export class AppComponent {
     "Agile",
     "CSS",
     "HTML",
-    "Postgre-SQL",
+    "Postgres-SQL",
     "Microsoft SQL Server",
     "C#"
   ];
